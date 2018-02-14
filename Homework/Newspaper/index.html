@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Newspaper</title>
+	<meta charset="UTF-8">
+	<style>
+	#container {
+		width: 1100px;
+		margin: 0 auto;
+	}
+	#top {
+		text-align: center;
+	}
+	#second {
+		height: 300px;
+		background-color: grey;
+		color: white;
+		text-align: center;
+		line-height: 50px;
+	}
+	#third {
+		text-align: center;
+	}
+	#fourth {
+		border-top: 1px double;
+		border-bottom: 1px double;
+		margin-bottom: 15px;
+	}
+	#fourth::after {
+		content:'';
+		clear: both;
+		display: table;
+	}
+	.column {
+		width: 45%;
+	}
+	#left {
+		float: left;
+	}
+	#right {
+		float: right;
+	}
+	.profile {
+		height: 100px;
+		background-color: lightgrey;
+		margin-bottom: 10px;
+	}
+	.field {
+		width: 150px;
+		height: 25px;
+		float: left;
+		background-color: grey;
+		margin-top: 0px;
+		text-align: center;
+		color: white;
+	}
+	.profile p {
+		float: left;
+	}
+	.profpic {
+		height: 100px;
+		width: 50px;
+		float: right;
+		background-color: darkgrey;
+		margin-right: 0px;
+	}
+	#seventh {
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+	<div id='container'>
+		<div id='top'>
+			<h1>OMAHA WORLD-HERALD</h1>
+			<h5>PRESENTS</h5>
+			<h1>ONE DAY UNIVERSITY</h1>
+		</div>
+		<div id='second'>
+			<h2>New Year's Resolutions . . .</h2>
+			<h3>	Clean the garage</h3>
+			<h3>	lose 15 pounds</h3>
+			<h3>	X learn from the nation's greatest professors</h3>
+		</div>
+		<div id='third'>
+			<h2>DATE AND TIME</h2>
+			<h4>LOCATION</h4>
+		</div>
+		<div id='fourth'>
+			<div id='left' class='column'>
+				<p>Do you love to learn? Then come to our thing! Hey! Do you love to learn? Then come to our thing! Hey! Do you love to learn? Then come to our thing! Hey! Do you love to learn? Then come to our thing! Hey! Do you love to learn? Then come to our thing! Hey! Do you love to learn? Then come to our thing! Hey! Do you love to learn? Then come to our thing! Hey! Do you love to learn? Then come to our thing! Hey! Do you love to learn? Then come to our thing! Hey! </p>
+			</div>
+			<div id='right' class='column'>
+				<p>You'll find that there is a good reason to come to this! Are you having second thoughts or doubting? You'll find that there is a good reason to come to this! Are you having second thoughts or doubting? You'll find that there is a good reason to come to this! Are you having second thoughts or doubting? You'll find that there is a good reason to come to this! Are you having second thoughts or doubting? You'll find that there is a good reason to come to this! Are you having second thoughts or doubting? </p>
+			</div>
+		</div>
+		<div id='fifth'>
+			<div class='profile'>
+				<h2 class='field'>Politics</h2>
+				<p>This speech will be about BLAH BLAH BLAH BLAH</p>
+				<img src='' class='profpic'>
+			</div>
+			<div class='profile'>
+				<h2 class='field'>Science</h2>
+			</div>
+			<div class='profile'>
+				<h2 class='field'>Psychology</h2>
+			</div>
+			<div class='profile'></div>
+		</div>
+		<div id='sixth'>
+			<div id='testimonial'></div>
+			<div id='testimonial'></div>
+			<div id='testimonial'></div>
+		</div>
+		<div id='seventh'>
+			<h3>Visit WebSite.com or Call 800-555-5555</h3>
+		</div>
+	</div>
+</body>
+</html>
