@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Banking Simulation</title>
+
+    <script>
+
+    	var user = {
+    		username: "graham",
+    		password: "wham",
+    		current_bill: 287,
+    		payment_history: [380, 234, 927, 451],
+        lockout: 4,
+    		messageToUser: function(text){
+    			alert(text);
+    		},
+        navigate: function(){
+          var choice = prompt(`Do you want to make a [payment] or [view] history or [exit]`);
+          if(choice == "[payment]"){
+            user.payBill();
+          }
+          if(choice == "[view]"){
+            var stringHistory = this.payment_history.toString();
+            user.messageToUser(stringHistory);
+            this.navigate();
+          }
+          if(choice == "[exit]"){
+            this.messageToUser("Word, peace dawg. Bank wit' us again sometime, 'ya feel?")
+            return;
+          } else {
+            this.messageToUser("Error. Please enter [payment] or [view] or [exit]");
+            this.navigate();
+          }
+        },
+    		payBill: function(){
+    			if(this.current_bill <= 0){
+    				this.messageToUser("No Bill.");
+    				return;
+    			} else{
+    				var amount = prompt(`Your current bill is $${this.current_bill}. Enter the amount you would like to pay.`);
+    				amount = parseInt(amount);
+    			} 
+    			if(!amount){
+    				this.messageToUser("No amount entered.");
+    				return;
+    			} 
+    			if(amount > this.current_bill){
+    				this.messageToUser("Error, payment amount greater than bill, please reenter exact or less amount.");
+    				this.payBill();
+    				return;
+    			}
+    			this.current_bill = (this.current_bill - amount);
+    			this.payment_history.push(amount);
+          var payAgain = confirm(`Thank you! Your payment of $${amount} has been received. Press OK to make another payment, or Cancel to return to navigation.`);
+          if(payAgain) {
+            this.payBill();
+            return;
+          } else{
+            this.navigate();
+          }
+        },
+        login: function(){
+          if(this.lockout <= 0){
+            this.messageToUser("Maximum attempts reached. Account is LOCKED.")
+            this.login();
+          } else {
+            var userName = prompt("Please enter your username.");
+            var passWord = prompt("Please enter your password.");
+            if(userName == user.username && passWord == user.password){
+              this.navigate();
+            } else {
+              this.lockout = (this.lockout - 1);
+              if(this.lockout <= 0){
+                user.login();
+              }
+              if(this.lockout == 1){
+                this.messageToUser(`Username or Password entered is incorrect, please try again. Final attempt before account LOCKOUT!`);
+                this.login();
+              } else {
+                this.messageToUser(`Username or Password entered is incorrect, please try again. ${this.lockout} attempts remain.`);
+                this.login();
+              }
+            }
+          }
+        }
+    	}
+      user.login();
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
